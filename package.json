@@ -1,0 +1,48 @@
+{
+    "name": "airline-costing-simulator-desktop",
+    "version": "1.0.0",
+    "description": "Desktop version of the Airline Costing Simulator",
+    "main": "electron/main.cjs",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview",
+        "electron:dev": "vite build && electron .",
+        "electron:build": "vite build && electron-builder"
+    },
+    "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "recharts": "^2.15.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.18",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "autoprefixer": "^10.4.20",
+        "concurrently": "^9.1.2",
+        "cross-env": "^7.0.3",
+        "electron": "^28.3.3",
+        "electron-builder": "^25.1.8",
+        "postcss": "^8.5.1",
+        "tailwindcss": "^3.4.17",
+        "typescript": "~5.7.2",
+        "vite": "^6.2.0",
+        "wait-on": "^8.0.3"
+    },
+    "build": {
+        "appId": "com.jacobgeorge.airline-costing-simulator",
+        "productName": "Airline Costing Simulator",
+        "directories": {
+            "output": "release"
+        },
+        "files": [
+            "dist/**/*",
+            "electron/**/*"
+        ],
+        "mac": {
+            "target": "dmg"
+        }
+    }
+}
